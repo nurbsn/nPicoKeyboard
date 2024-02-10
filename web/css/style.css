@@ -1,0 +1,141 @@
+:root {
+  --key-height: 80px;
+  --key-width: 80px;
+  --key-margin: 8px;
+  --key-pos-x: calc(var(--key-width) + var(--key-margin));
+  --key-pos-y: calc(var(--key-height) + var(--key-margin));
+  --keyboard-width: calc(var(--key-width) * 6 + var(--key-margin) * 8);
+  --keyboard-height: calc(var(--key-height) * 4.5 + var(--key-margin) * 3);
+
+  --keyboard-top: max(0px, calc(50vh - var(--keyboard-height) * 0.6));
+  --keyboard-left: max(0px, calc(50vw - var(--keyboard-width) * 0.5));
+  --color-mod: #00AB59;
+}
+
+body {
+  /*background-color:black;*/
+  font-family:'Inter';
+}
+.keyboard {
+  display: block;
+  height: 90%;
+  width: 100%;
+  }
+
+.controls {
+  color:rgb(30, 30, 30);
+  padding-left:2px;
+  text-align:center;
+  width:100%
+}
+.control {
+  display:inline-block;
+  cursor:pointer;
+  margin:0px 8px 0px 8px;
+  color:rgb(30, 30, 30);
+}
+.control:hover {
+  color:rgb(60, 60, 60);;
+}
+.control.connect { display:inline-block; }
+.keyboard.connected .control.connect { display:none; }
+
+.control.save, .control.reset {
+  display:none;
+}
+.keyboard.connected .control.save, .keyboard.connected .control.reset {
+  display:inline-block;
+}
+
+.key {
+  position:absolute;
+  display:block;
+  width:var(--key-width);
+  height:var(--key-height);
+  border-radius:8px;
+  background-color:#1B1B1B;
+  opacity:0.5;
+  transition:opacity 1s;
+}
+.keyboard.connected .held {
+  background-color:#183E2C;
+}
+
+.keycode {
+  color:white;
+  font-size:24px;
+
+  position:absolute;
+  top:24px;
+  text-align:center;
+  width:100%;
+  cursor:pointer;
+  display:none;
+}
+
+.keycode:hover {
+  text-decoration:underline;
+}
+
+.keycode.mod {
+  color:var(--color-mod);
+}
+.keycode.small {
+  top:30px;
+  font-size:16px;
+}
+.alt {
+  color:var(--color-mod);
+  font-size:12px;
+  text-align:right;
+
+  position:absolute;
+  top:7px;
+  right:7px;
+  cursor:pointer;
+  display:none;
+}
+.alt:hover {
+  text-decoration:underline;
+}
+
+.keyboard.connected .keycode, .keyboard.connected .alt {
+  display:block;
+}
+
+.keyCodeLabel
+{
+  display: block;
+}
+.keyCodeSelect
+{
+  display: block;
+}
+.keyCodeAltLabel
+{
+  display: block;
+  float: left;
+}
+.keyCodeAltSelect
+{
+  display: block;
+}
+
+.selector {
+  position:absolute;
+  width:300px;
+  height:32px;
+  left:calc(50vw - 150px);
+  top:max(0px, calc(var(--keyboard-top) - 48px));
+  text-align:center;
+  background-color:rgba(0, 0, 0, 1);
+  box-sizing:border-box;
+  padding:12px;
+  color:white;
+  -box-shadow:0px 2px 10px rgba(0,0,0,0.5), 0px 2px 1000px rgba(255, 255, 255, 0.15);
+  display:none;
+}
+
+.selector.visible {
+  display:block;
+}
