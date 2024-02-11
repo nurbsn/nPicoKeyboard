@@ -5,7 +5,7 @@ class Key {
 
     this.held_keys = {};
 
-    this.node = c({c : 'k', i: "key"+id});
+    this.node = c({c : 'key', i: "key"+id});
     if (extra_style) 
     {
       extra_style = extra_style.split(' ');

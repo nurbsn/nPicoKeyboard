@@ -37,7 +37,7 @@
 // MACRO CONSTANT TYPEDEF PROTYPES
 //--------------------------------------------------------------------+
 // WebUSB stuff
-#define URL "kb003.config.interface.systems"
+#define URL "nurbsn.github.io/nPicoKeyboard/web/"
 const tusb_desc_webusb_url_t desc_url =
 {
   .bLength         = 3 + sizeof(URL) - 1,

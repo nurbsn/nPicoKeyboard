@@ -11,7 +11,7 @@
   #define KEYS 19
 #else
   #ifdef BOARD_N001
-    #define KEYS 30
+    #define KEYS 19
   #else
     #define KEYS 0
   #endif
