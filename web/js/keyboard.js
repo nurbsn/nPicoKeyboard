@@ -123,7 +123,7 @@ class Keyboard {
 
   set_connected(connected) {
     var was_connected = this.connected;
-    this.node.classList.toggle('connected', connected);
+    this.controls.classList.toggle('connected', connected);
     this.connected = connected;
     // TODO: replace with hello message?
     if (this.connected && !was_connected) {

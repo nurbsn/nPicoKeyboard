@@ -29,7 +29,8 @@ body {
 {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 5px;
+  padding: 5px;
 }
 
 .key 
